@@ -1,0 +1,15 @@
+Bootstrap: docker
+From: python:3.9.0-buster
+
+%runscript
+
+    exec /usr/local/bin/python "$@"
+
+
+%post
+
+    apt-get update
+    apt-get install -y vim
+    pip3 install pandas
+    mkdir -p /scratch
+    mkdir -p /local-scratch
